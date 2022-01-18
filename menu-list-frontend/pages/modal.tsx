@@ -26,22 +26,19 @@ Modal.setAppElement('#__next');
 export default function Modals() {
     const [modalIsOpen, setIsOpen] = useState(false);
 
-    //モーダルを開く処理
     function openModal() {
         setIsOpen(true);
     }
 
-    //モーダルを開いた後の処理
     function afterOpenMofdal() {
         //モーダルを開いた後に実行する処理
     }
 
-    //モーダルを閉じる処理
     function closeModal() {
         setIsOpen(false);
     }
 
-    return(
+    return (
         <>
             <button onClick={openModal}>Open</button>
             <Modal
