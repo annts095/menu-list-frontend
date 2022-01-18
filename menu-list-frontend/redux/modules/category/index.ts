@@ -32,6 +32,10 @@ export const slice = createSlice({
         builder.addCase(fetchCategories.fulfilled, (state, payload: { payload: { categories: Category[]} }) => {
             state.categories = payload.payload.categories;
         });
+        builder.addCase(fetchCategories.rejected, (_, { payload }: { payload: unknown }) => {
+            // TODO エラー処理の場合を考える
+            console.log(payload);
+        });
     }
 },);
 
