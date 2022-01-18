@@ -2,8 +2,16 @@ import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
+import { fetchCategories } from '../redux/modules/category'
+import { useDispatch } from 'react-redux'
+import { AppDispatch } from '../redux/store'
+import { useEffect } from 'react'
 
 const Home: NextPage = () => {
+  const dispatch: AppDispatch = useDispatch();
+  useEffect(() => {
+    dispatch(fetchCategories());
+  });
   return (
     <div className={styles.container}>
       <Head>
