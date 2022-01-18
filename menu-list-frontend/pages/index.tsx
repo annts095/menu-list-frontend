@@ -13,6 +13,8 @@ const Home: NextPage = () => {
   const categories = useSelector(categoriesSelector);
   return (
     <ul>
+      <p>すべて</p>
+      <p>おすすめ</p>
       {categories.map((category) => (
         <p key={category.sort_number}>{category.title}</p>
       ))}
