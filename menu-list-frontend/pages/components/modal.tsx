@@ -40,7 +40,7 @@ export default function Modals() {
 
     return (
         <>
-            <button onClick={openModal}>Open</button>
+            <button onClick={openModal}>詳細</button>
             <Modal
                 isOpen={modalIsOpen}
                 onAfterOpen={afterOpenMofdal}
