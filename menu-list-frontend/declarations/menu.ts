@@ -1,7 +1,7 @@
 import { Nullable, ValueOf } from './utils';
 import { MENU_STATUS } from '../const/menu';
 
-export type Product = {
+export type Menu = {
     id: number,
     title: string,
     image_url: Nullable<string>,
