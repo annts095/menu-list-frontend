@@ -1,7 +1,17 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import { Children } from "react";
 import { ThunkApi } from "../../../declarations";
-import { Menu } from "../../../declarations/menu"
+import { ConvertedMenu, Menu } from "../../../declarations/menu"
 import * as menuServices from "../../../services/menu";
+
+const convertMenu = (menus: Menu[]): ConvertedMenu[] => {
+    return menus.map((menu) => {
+        const children = menus.filter((_m) => {
+            return menu.childen.some((id) => id === _m.id && _m.is_child);
+        })
+        return { ...menu, childen: children}
+    });
+}
 
 export const fetchMenus = createAsyncThunk<{menus: Menu[]}, void, ThunkApi>(
     'menu/fetchMenus',
@@ -15,9 +25,8 @@ export const fetchMenus = createAsyncThunk<{menus: Menu[]}, void, ThunkApi>(
     }
 );
 
-
 type MenuState = {
-    menus: Menu[]|[]
+    menus: ConvertedMenu[]|[]
 };
 
 export const initialState: MenuState = {
@@ -31,7 +40,7 @@ export const slice = createSlice({
     },
     extraReducers: (builder) => {
         builder.addCase(fetchMenus.fulfilled, (state, payload: { payload: { menus: Menu[]} }) => {
-            state.menus = payload.payload.menus;
+            state.menus = convertMenu(payload.payload.menus);
         });
         builder.addCase(fetchMenus.rejected, (_, { payload }: { payload: unknown }) => {
             // TODO エラー処理の場合を考える
