@@ -1,0 +1,126 @@
+{
+    "menus": [
+        {
+            "id": 1,
+            "title": "辛麺",
+            "image_url": "https://placehold.jp/150x150.png",
+            "description": "辛麺です。",
+            "price": 500,
+            "status": "publishing",
+            "is_child": false,
+            "is_recommend": true,
+            "topping": [
+                {
+                    "title": "たまご",
+                    "price": 100
+                },
+                {
+                    "title": "チーズ",
+                    "price": 200
+                }
+            ],
+            "childen": [
+                3,
+                4
+            ],
+            "category": 1,
+            "sort_number": 1
+        },
+        {
+            "id": 2,
+            "title": "坦々麺",
+            "image_url": "https://placehold.jp/150x150.png",
+            "description": "",
+            "price": 500,
+            "status": "sold_out",
+            "is_child": false,
+            "is_recommend": true,
+            "topping": [
+                {
+                    "title": "たまご",
+                    "price": 100
+                },
+                {
+                    "title": "チーズ",
+                    "price": 200
+                }
+            ],
+            "childen": [],
+            "category": 1,
+            "sort_number": 1
+        },
+        {
+            "id": 3,
+            "title": "おでん",
+            "image_url": "https://placehold.jp/150x150.png",
+            "description": "おでんです。",
+            "price": 100,
+            "status": "publishing",
+            "is_child": false,
+            "is_recommend": false,
+            "topping": [],
+            "childen": [
+                4,
+                5
+            ],
+            "category": 3,
+            "sort_number": 1
+        },
+        {
+            "id": 4,
+            "title": "おでん(玉子)",
+            "image_url": "https://placehold.jp/150x150.png",
+            "description": "",
+            "price": 100,
+            "status": "publishing",
+            "is_child": true,
+            "is_recommend": false,
+            "topping": [],
+            "childen": [],
+            "category": 3,
+            "sort_number": 2
+        },
+        {
+            "id": 5,
+            "title": "おでん(大根)",
+            "image_url": "https://placehold.jp/150x150.png",
+            "description": "",
+            "price": 100,
+            "status": "publishing",
+            "is_child": true,
+            "is_recommend": false,
+            "topping": [],
+            "childen": [],
+            "category": 3,
+            "sort_number": 3
+        },
+        {
+            "id": 6,
+            "title": "ビール",
+            "image_url": "https://placehold.jp/150x150.png",
+            "description": "ビールです。",
+            "price": 600,
+            "status": "publishing",
+            "is_child": false,
+            "is_recommend": false,
+            "topping": [],
+            "childen": [],
+            "category": 4,
+            "sort_number": 1
+        },
+        {
+            "id": 6,
+            "title": "表示されないアイテム",
+            "image_url": "https://placehold.jp/150x150.png",
+            "description": "",
+            "price": 500,
+            "status": "closed",
+            "is_child": false,
+            "is_recommend": false,
+            "topping": [],
+            "childen": [],
+            "category": 1,
+            "sort_number": 3
+        }
+    ]
+}
