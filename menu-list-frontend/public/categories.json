@@ -1,0 +1,19 @@
+{
+    "categories":[
+        {
+            "id": 1,
+            "title": "辛麺",
+            "sort_number": 1
+        },
+        {
+            "id": 2,
+            "title": "ドリンク",
+            "sort_number": 3
+        },
+        {
+            "id": 3,
+            "title": "一品",
+            "sort_number": 2
+        }
+    ]
+}
