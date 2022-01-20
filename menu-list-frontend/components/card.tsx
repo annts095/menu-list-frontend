@@ -13,7 +13,7 @@ export default function Card({ menu }: Props) {
             <div className="col">
                 <div className="card h-100" >
                     { menu.image_url !== null && <img src={menu.image_url} className="card-img-top" alt="..." /> }
-                    <ImageModal />
+                    <ImageModal menu={menu}/>
                     <div className="card-body">
                         <h5 className="card-title">{ menu.title }</h5>
                         <p className="card-text"> 価格:{ menu.price }円</p>
