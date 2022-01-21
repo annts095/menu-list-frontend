@@ -6,6 +6,7 @@ import { useEffect } from 'react'
 import { categoriesSelector } from '../redux/selector/category'
 import { fetchMenus } from '../redux/modules/menu'
 import { menusSelector } from '../redux/selector/menu'
+import Card from "../components/card";
 
 const Home: NextPage = () => {
   const dispatch: AppDispatch = useDispatch();
@@ -31,7 +32,7 @@ const Home: NextPage = () => {
         <p>メニュー</p>
         <ul>
           {menus.map((menu) => (
-            <li key={menu.id}>{menu.title} : {menu.price}円</li>
+            <Card key={menu.id} menu={menu} />
           ))}
         </ul>
       </div>

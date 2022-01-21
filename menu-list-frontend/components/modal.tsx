@@ -1,5 +1,6 @@
 import Modal from 'react-modal';
 import { useState } from 'react';
+import { ConvertedMenu } from '../declarations/menu';
 
 const customStyles = {
     overlay: {
@@ -23,7 +24,11 @@ const customStyles = {
 
 Modal.setAppElement('#__next');
 
-export default function Modals() {
+type Props = {
+    menu: ConvertedMenu;
+};
+
+export default function Modals({ menu }: Props) {
     const [modalIsOpen, setIsOpen] = useState(false);
 
     function openModal() {
@@ -47,7 +52,8 @@ export default function Modals() {
                 onRequestClose={closeModal}
                 style={customStyles}
             >
-                <h2>Hello</h2>
+                <h2>{menu.title}</h2>
+                <p>{menu.price}円</p>
                 <button onClick={closeModal}>close</button>
             </Modal>
         </>
