@@ -17,16 +17,21 @@ export const fetchCategories = createAsyncThunk<{categories: Category[]}, void, 
 
 type CategoryState = {
     categories: Category[]|[]
+    currentCategory: string;
 }
 
 export const initialState: CategoryState = {
-    categories: []
+    categories: [],
+    currentCategory: '',
 };
 
 export const slice = createSlice({
     name: 'category',
     initialState,
     reducers: {
+        setCategory: (state, { payload }: { payload: string }) => {
+            state.currentCategory = payload
+        }
     },
     extraReducers: (builder) => {
         builder.addCase(fetchCategories.fulfilled, (state, payload: { payload: { categories: Category[]} }) => {
@@ -39,4 +44,5 @@ export const slice = createSlice({
     }
 },);
 
+export const { setCategory } = slice.actions;
 export default slice.reducer;
