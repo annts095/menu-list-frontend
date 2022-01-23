@@ -26,8 +26,7 @@ export const initialState: CategoryState = {
 export const slice = createSlice({
     name: 'category',
     initialState,
-    reducers: {
-    },
+    reducers: {},
     extraReducers: (builder) => {
         builder.addCase(fetchCategories.fulfilled, (state, payload: { payload: { categories: Category[]} }) => {
             state.categories = payload.payload.categories;

@@ -27,19 +27,27 @@ export const fetchMenus = createAsyncThunk<{menus: Menu[]}, void, ThunkApi>(
 
 type MenuState = {
     menus: ConvertedMenu[]|[]
+    masterMenus: ConvertedMenu[]|[]
 };
 
 export const initialState: MenuState = {
-    menus: []
+    menus: [],
+    masterMenus: [],
 };
 
 export const slice = createSlice({
     name: 'menu',
     initialState,
     reducers: {
+        setMenus: (state, { payload }: { payload: string }) => {
+            state.menus = state.masterMenus.filter((menu) => {
+                return menu.category.toString() === payload
+            })
+        },
     },
     extraReducers: (builder) => {
         builder.addCase(fetchMenus.fulfilled, (state, payload: { payload: { menus: Menu[]} }) => {
+            state.masterMenus = convertMenu(payload.payload.menus);
             state.menus = convertMenu(payload.payload.menus);
         });
         builder.addCase(fetchMenus.rejected, (_, { payload }: { payload: unknown }) => {
@@ -49,4 +57,5 @@ export const slice = createSlice({
     },
 });
 
+export const { setMenus } = slice.actions;
 export default slice.reducer;
