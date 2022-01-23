@@ -40,6 +40,18 @@ export const slice = createSlice({
     initialState,
     reducers: {
         setMenus: (state, { payload }: { payload: string }) => {
+            if (payload === '0') {
+                state.menus = state.masterMenus;
+                return;
+            }
+
+            if (payload === '99') {
+                state.menus = state.masterMenus.filter((menu) => {
+                    return menu.is_recommend;
+                })
+                return;
+            }
+
             state.menus = state.masterMenus.filter((menu) => {
                 return menu.category.toString() === payload
             })

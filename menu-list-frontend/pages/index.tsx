@@ -31,8 +31,8 @@ const Home: NextPage = () => {
       <div>
         <p>カテゴリ</p>
         <ul>
-          <li>すべて</li>
-          <li>おすすめ</li>
+          <li onClick={clickCategory} data-id='0'>すべて</li>
+          <li onClick={clickCategory} data-id='99'>おすすめ</li>
           {categories.map((category) => (
             <li key={category.sort_number} onClick={clickCategory} data-id={category.id}>{category.title}</li>
           ))}
